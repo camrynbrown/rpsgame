@@ -23,7 +23,6 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choice = prompt("Rock, Paper, or Scissors?")
-    // alert("You chose " + choice)
     choice = choice.toUpperCase()
     
     switch (choice) {
@@ -42,33 +41,39 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    // computerChoice = computerChoice.toUpperCase()
     console.log("Human choice: " + humanChoice + " Computer choice " + computerChoice)
     
     let message1 = "You lose!"
     let message2 = "You win!"
     if (humanChoice == 1 && computerChoice == 2) {
         console.log(message1 + " Paper beats rock.")
+        computerScore =+ 1
     }
 
     else if (humanChoice == 1 && computerChoice == 3) {
         console.log (message2 + " Rock beats scissors!!")
+        humanScore =+ 1
     }
 
     else if (humanChoice == 2 && computerChoice == 1) {
         console.log (message2 + " Paper beats rock!!")
+        humanScore =+ 1
     }
 
     else if (humanChoice == 2 && computerChoice == 3) {
         console.log(message1 + " Scissors beats paper.")
+        computerScore =+ 1
     }
 
     else if (humanChoice == 3 && computerChoice == 1) {
         console.log(message1 + " Rock beats scissors.")
+        computerScore =+ 1
     }
 
     else if (humanChoice == 3 && computerChoice == 2) {
         console.log(message2 + " Scissors beats paper.")
+        humanScore =+ 1
+
     }
 
     else if (humanChoice == computerChoice) {
@@ -77,7 +82,14 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+function playGame() {
+    let games = prompt("How many games do you want to play?")
 
-playRound(humanSelection, computerSelection);
+    for (let i = 0; i < games; i++ ) {
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+        playRound(humanSelection, computerSelection)
+    }
+}
+
+playGame()
