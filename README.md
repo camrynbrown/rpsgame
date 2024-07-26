@@ -31,5 +31,3 @@ A simple Rock Paper Scissors game played in the browser console, created as part
 - Scissors beats Paper
 - Paper beats Rock
 
-## Project Structure
-
